@@ -1,4 +1,4 @@
-package com.randoli.crud.event;
+package com.randoli.event.consumer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

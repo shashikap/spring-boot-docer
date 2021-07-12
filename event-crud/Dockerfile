@@ -3,7 +3,7 @@ FROM adoptopenjdk/openjdk11:latest
 WORKDIR /opt/app
 
 
-COPY event-crud/target/app.jar /opt/app/app.jar
+COPY target/app.jar /opt/app/app.jar
 
 CMD ls -lrt /opt/app/
 

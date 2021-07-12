@@ -2,7 +2,7 @@
 CREATE TABLE IF NOT EXISTS event (
   	eventId uuid PRIMARY KEY,
 	transId uuid,
-	transTms TIMESTAMP,
+	transTms VARCHAR(50),
 	rcNum VARCHAR(25),
 	clientId VARCHAR(25),
 	eventCnt int,
