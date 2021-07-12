@@ -30,7 +30,7 @@ build_docker(){
     echo "-------------------------------------------------------------------------------"
     echo "Building-Event-Consumer-Docker"
     echo "-------------------------------------------------------------------------------"
-    docker build -t event-consumer:v1.00  -f event-consumer/Dockerfile .
+    docker build -t mydockerhub/event-consumer:v1.0.0  -f event-consumer/Dockerfile .
     echo "-------------------------------------------------------------------------------"
     echo "Event-Consumer-Build-Docker-Finished"
     echo "-------------------------------------------------------------------------------"

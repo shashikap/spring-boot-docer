@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: event-consumer
+  template:
+    metadata:
+      labels:
+        app: event-consumer
+    spec:
+      containers:
+        - name: event-consumer
+          image: mydockerhub/event-consumer:v1.0.0
+          ports:
+            - containerPort: 8081

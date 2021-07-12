@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: event-crud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: event-crud
+  template:
+    metadata:
+      labels:
+        app: event-crud
+    spec:
+      containers:
+        - name: event-crud
+          image: mydockerhub/event-crud:v1.0.0
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/postgres
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: password
+          ports:
+            - containerPort: 8082
