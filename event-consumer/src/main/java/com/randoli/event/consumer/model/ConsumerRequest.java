@@ -7,11 +7,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class ConsumerRequest {
 
 	private UUID batchId;
@@ -20,7 +22,7 @@ public class ConsumerRequest {
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor
-	class RecordData {
+	public static class RecordData {
 		private UUID transId;
 		private String transTms;
 		private String rcNum;
@@ -31,7 +33,7 @@ public class ConsumerRequest {
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor
-	class EventData {
+	public static class EventData {
 		private Integer eventCnt;
 		private String locationCd;
 		private String locationId1;

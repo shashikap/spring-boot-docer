@@ -1,0 +1,48 @@
+[35m21-07-13T14:55:26.070[0;39m [34mINFO [0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplicationTests[0;39m - Starting EventConsumerApplicationTests using Java 15.0.1 on ITSMs-MBP with PID 27223 (started by samithajayawardana in /Users/samithajayawardana/kube_test/test_env/spring-boot-docer/event-consumer)
+[35m21-07-13T14:55:26.071[0;39m [39mDEBUG[0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplicationTests[0;39m - Running with Spring Boot v2.5.2, Spring v5.3.8
+[35m21-07-13T14:55:26.071[0;39m [34mINFO [0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplicationTests[0;39m - No active profile set, falling back to default profiles: default
+[35m21-07-13T14:55:29.888[0;39m [31mWARN [0;39m [32m      main[0;39m [33m[-][0;39m [36mo.s.c.s.a.z.ZipkinAutoConfiguration[0;39m - Check result of the [RestTemplateSender{http://localhost:9411/zipkin/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.HttpClientErrorException$NotFound: 404 Not Found: [404 Not Found]}]
+[35m21-07-13T14:55:30.575[0;39m [34mINFO [0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplicationTests[0;39m - Started EventConsumerApplicationTests in 4.898 seconds (JVM running for 5.762)
+[35m21-07-13T15:01:31.767[0;39m [34mINFO [0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplication[0;39m - Starting EventConsumerApplication using Java 15.0.1 on ITSMs-MBP with PID 27720 (/Users/samithajayawardana/kube_test/test_env/spring-boot-docer/event-consumer/target/classes started by samithajayawardana in /Users/samithajayawardana/kube_test/test_env/spring-boot-docer/event-consumer)
+[35m21-07-13T15:01:31.769[0;39m [39mDEBUG[0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplication[0;39m - Running with Spring Boot v2.5.2, Spring v5.3.8
+[35m21-07-13T15:01:31.770[0;39m [34mINFO [0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplication[0;39m - No active profile set, falling back to default profiles: default
+[35m21-07-13T15:01:33.880[0;39m [31mWARN [0;39m [32m      main[0;39m [33m[-][0;39m [36mo.s.c.s.a.z.ZipkinAutoConfiguration[0;39m - Check result of the [RestTemplateSender{http://localhost:9411/zipkin/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.HttpClientErrorException$NotFound: 404 Not Found: [404 Not Found]}]
+[35m21-07-13T15:01:35.356[0;39m [31mWARN [0;39m [32m      main[0;39m [33m[-][0;39m [36mo.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[0;39m - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+[35m21-07-13T15:01:36.381[0;39m [31mWARN [0;39m [32m      main[0;39m [33m[-][0;39m [36mz.r.AsyncReporter$BoundedAsyncReporter[0;39m - Timed out waiting for in-flight spans to send
+[35m21-07-13T15:01:36.418[0;39m [1;31mERROR[0;39m [32m      main[0;39m [33m[-][0;39m [36mo.s.b.d.LoggingFailureAnalysisReporter[0;39m - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+[35m21-07-13T15:01:54.745[0;39m [34mINFO [0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplication[0;39m - Starting EventConsumerApplication using Java 15.0.1 on ITSMs-MBP with PID 27765 (/Users/samithajayawardana/kube_test/test_env/spring-boot-docer/event-consumer/target/classes started by samithajayawardana in /Users/samithajayawardana/kube_test/test_env/spring-boot-docer/event-consumer)
+[35m21-07-13T15:01:54.747[0;39m [39mDEBUG[0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplication[0;39m - Running with Spring Boot v2.5.2, Spring v5.3.8
+[35m21-07-13T15:01:54.747[0;39m [34mINFO [0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplication[0;39m - No active profile set, falling back to default profiles: default
+[35m21-07-13T15:01:56.572[0;39m [31mWARN [0;39m [32m      main[0;39m [33m[-][0;39m [36mo.s.c.s.a.z.ZipkinAutoConfiguration[0;39m - Check result of the [RestTemplateSender{http://localhost:9411/zipkin/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.HttpClientErrorException$NotFound: 404 Not Found: [404 Not Found]}]
+[35m21-07-13T15:01:58.104[0;39m [34mINFO [0;39m [32m      main[0;39m [33m[-][0;39m [36mc.r.e.c.EventConsumerApplication[0;39m - Started EventConsumerApplication in 3.768 seconds (JVM running for 4.07)
+[35m21-07-13T15:13:31.071[0;39m [31mWARN [0;39m [32mv2/spans}}[0;39m [33m[-][0;39m [36mz.r.AsyncReporter$BoundedAsyncReporter[0;39m - Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+[35m21-07-13T15:13:31.075[0;39m [31mWARN [0;39m [32mv2/spans}}[0;39m [33m[-][0;39m [36mz.r.AsyncReporter$BoundedAsyncReporter[0;39m - Dropped 1 spans due to NotFound(404 Not Found: [404 Not Found])
+org.springframework.web.client.HttpClientErrorException$NotFound: 404 Not Found: [404 Not Found]
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:113)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:186)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:125)
+	at org.springframework.web.client.ResponseErrorHandler.handleError(ResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:819)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:777)
+	at org.springframework.cloud.sleuth.zipkin2.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateWrapper.java:69)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:660)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.post(RestTemplateSender.java:151)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:169)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:159)
+	at zipkin2.Call$Base.execute(Call.java:391)
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299)
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+	at java.base/java.lang.Thread.run(Thread.java:832)
