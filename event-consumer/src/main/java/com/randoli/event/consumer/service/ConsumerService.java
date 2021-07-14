@@ -1,9 +1,8 @@
 package com.randoli.event.consumer.service;
 
-import org.springframework.stereotype.Service;
+import com.randoli.event.consumer.model.ConsumerRequest;
 
-@Service
-public class ConsumerService {
+public interface ConsumerService {
 
-
+	public String postEvents(ConsumerRequest request);
 }

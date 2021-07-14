@@ -10,4 +10,5 @@ class EventConsumerApplicationTests {
 	void contextLoads() {
 	}
 
+	
 }
