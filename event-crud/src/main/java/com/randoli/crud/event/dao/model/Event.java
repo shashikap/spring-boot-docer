@@ -1,4 +1,4 @@
-package com.randoli.crud.event.model;
+package com.randoli.crud.event.dao.model;
 
 import java.util.UUID;
 

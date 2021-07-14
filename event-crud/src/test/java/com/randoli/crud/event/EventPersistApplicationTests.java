@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.util.Collections;
 import java.util.UUID;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,53 +19,64 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.randoli.crud.event.model.Event;
+import com.randoli.crud.event.dao.model.Event;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-class EventPersistApplicationTests {
+public class EventPersistApplicationTests {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
 
-	private static Event dummyEvent;
+	private static Event testPayloadEvent;
+
+	private static Event persistPayload;
 
 	private static final UUID DUMMY_UUID = UUID.randomUUID();
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 
 	}
 
-	@BeforeAll
-	public static void buildDummyEvent() {
-		dummyEvent = buildEvent();
+	@Before
+	public void buildDummyEvent() {
+		testPayloadEvent = buildEvent();
 	}
 
 	@Test
-	public void saveEventTest() throws JsonMappingException, JsonProcessingException {
-		HttpEntity<Event> request = new HttpEntity<>(dummyEvent, getJsonHeaders());
-
-		ResponseEntity<String> response = restTemplate.exchange("/api/event", HttpMethod.POST, request, String.class);
+	public void saveEventTest() {
+		HttpEntity<Event> request = new HttpEntity<>(testPayloadEvent, getJsonHeaders());
+		ResponseEntity<Event> response = restTemplate.exchange("/api/event", HttpMethod.POST, request, Event.class);
 		assertEquals(HttpStatus.CREATED, response.getStatusCode());
-
+		persistPayload = response.getBody();
 	}
 
 	@Test
-	public void listEventTest() throws JsonMappingException, JsonProcessingException {
-		ResponseEntity<String> response = restTemplate.getForEntity("/api/event", String.class);
+	public void listEventTest() {
+		ResponseEntity<String> response = restTemplate.getForEntity("/api/events", String.class);
 		assertNotNull(response);
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
 
 	@Test
-	public void deleteEventTest() throws JsonMappingException, JsonProcessingException {
+	public void updateEventTest() {
+		HttpEntity<Event> request = new HttpEntity<>(persistPayload, getJsonHeaders());
+		ResponseEntity<Event> response = restTemplate.exchange("/api/event", HttpMethod.PUT, request, Event.class);
+		assertEquals(HttpStatus.CREATED, response.getStatusCode());
+	}
 
-		ResponseEntity<String> response = restTemplate.exchange("/api/event/trans-id/" + DUMMY_UUID, HttpMethod.DELETE,
-				null, String.class);
-		assertNotNull(response);
-		assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+	@Test
+	public void getEventTest() {
+		ResponseEntity<Event> response = restTemplate.getForEntity("/api/event/" + persistPayload.getEventId(),
+				Event.class);
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+
+	}
+
+	@Test
+	public void deleteEventTest() {
+		restTemplate.delete("/api/event/" + persistPayload.getEventId());
+		//assertDoesNotThrow(() -> RuntimeException());
 	}
 
 	private static Event buildEvent() {
