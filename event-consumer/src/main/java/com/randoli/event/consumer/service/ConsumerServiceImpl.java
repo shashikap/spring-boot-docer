@@ -16,8 +16,6 @@ import com.randoli.event.consumer.web.ConsumerController;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Scheduler;
-import reactor.core.scheduler.Schedulers;
 
 
 @Service
@@ -47,7 +45,20 @@ public class ConsumerServiceImpl implements ConsumerService {
 		
 	return responses.stream().map(Object::toString).collect(Collectors.joining(","));
 	}
-	
+
+
+	public Flux<Event> postEvents2(ConsumerRequest request) {
+
+		List<Event> events =  buildEvents(request);
+
+		LOGGER.debug("About to post {} events.",events.size());
+
+		return webClient.post()
+				.body(Flux.fromIterable(events), Event.class)
+				.retrieve()
+				.bodyToFlux(Event.class);
+
+	}
 
 	/** FIXME: according to the sample payload currently considering first element of the event array to pull out the details.**/
 	private List<Event> buildEvents(ConsumerRequest request) {
